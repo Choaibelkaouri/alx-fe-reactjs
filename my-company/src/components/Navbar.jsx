@@ -1,28 +1,28 @@
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+function Navbar() {
+  const navStyle = {
+    padding: '10px',
+    backgroundColor: '#333',
+    color: 'white',
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: '20px'
+  };
+
+  const linkStyle = {
+    color: 'white',
+    textDecoration: 'none'
+  };
+
   return (
-    <nav
-      style={{
-        backgroundColor: "green",
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/services">Services</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
+    <nav style={navStyle}>
+      <Link to="/" style={linkStyle}>Home</Link>
+      <Link to="/about" style={linkStyle}>About</Link>
+      <Link to="/services" style={linkStyle}>Services</Link>
+      <Link to="/contact" style={linkStyle}>Contact</Link>
     </nav>
   );
 }
+
+export default Navbar;

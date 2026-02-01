@@ -1,18 +1,11 @@
-import { createContext, useState } from "react";
+Checks for the use of context on the UserProfile.jsx file
 
-// Create the context
-const UserContext = createContext(null);
+src / components / UserProfile.jsx doesn't contain: ["useContext", "UserContext"]
 
-// Create the provider component
-export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+ACTUAL CODE SCRIPT CONTENT
 
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
-};
+import { createContext } from 'react';
 
-// Export the context
+const UserContext = createContext();
+
 export default UserContext;
